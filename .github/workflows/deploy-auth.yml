@@ -20,10 +20,10 @@ jobs:
           node-version: 18
       
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Install AWS CDK
-        run: npm install -g aws-cdk
+        run: npm install -g aws-cdk --legacy-peer-deps
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
