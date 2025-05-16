@@ -122,7 +122,7 @@ export class AuthStack extends cdk.Stack {
     userPoolClient.node.addDependency(googleProvider);
     userPoolClient.node.addDependency(mircosoftProvider);
 
-    new UserPoolDomain(this, 'HoorainUserPoolDomain2', {
+    new UserPoolDomain(this, 'HoorainUserPoolDomain', {
       userPool: userPool,
       cognitoDomain: { domainPrefix: 'hoorain' },
       managedLoginVersion: ManagedLoginVersion.NEWER_MANAGED_LOGIN

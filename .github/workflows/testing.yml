@@ -1,0 +1,50 @@
+name: Learning Github Workflows
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Print working directory
+        run: pwd
+
+      - name: List files in repository
+        run: ls -la
+
+      - name: Show Node.js version
+        run: node --version
+
+      - name: Show NPM version
+        run: npm --version
+
+      - name: Echo a test message
+        run: echo "This is a test step for learning GitHub Actions!"
+
+      - name: Send Email Notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "✅ AuthStack Deployed Successfully"
+          to: jagjets133@gmail.com
+          from: ${{ secrets.EMAIL_USERNAME }}
+          body: "Your AWS Cognito AuthStack was deployed successfully to production!"
