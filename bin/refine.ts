@@ -5,6 +5,7 @@ import { ElasticBeanstalkStack } from '../lib/elasticbeanstalk-stack';
 import { PipelineStack } from '../lib/pipeline-stack';
 import { EnvSecretsStack } from '../lib/env-secrets-stack';
 import { EC2DeployStack } from '../lib/ec2-deploy-stack';
+import { AnotherStack } from '../lib/another-stack';
 
 config({
     path: path.resolve(process.cwd(), '.env.local')
@@ -18,6 +19,10 @@ new PipelineStack(app, 'RefinePipelineStack', {
     ebEnvName: ebStack.ebEnvName,
 });
 
+
+new AnotherStack(app, 'RefineAnotherStack', {
+    env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION }
+})
 
 new EnvSecretsStack(app, 'EnvSecretsStack', {
     env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION }

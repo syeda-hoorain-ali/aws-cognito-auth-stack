@@ -5,6 +5,7 @@
 * **DeployStack:** first attempt to deploy
 * **ElasticBeanstalk & PipelineStack:** second attempt to deploy
 * **Ec2DeployStack:** third attempt to deploy
+* **anotherStack:** fourth attempt to deploy
 
 
 ## Useful commands
