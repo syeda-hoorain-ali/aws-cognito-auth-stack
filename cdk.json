@@ -1,5 +1,5 @@
 {
-  "app": "npx ts-node --prefer-ts-exts bin/auth-stack.ts",
+  "app": "npx ts-node --prefer-ts-exts bin/refine.ts",
   "watch": {
     "include": [
       "**"

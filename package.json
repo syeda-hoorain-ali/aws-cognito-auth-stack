@@ -1,9 +1,9 @@
 {
   "name": "auth-stack",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "bin": {
     "auth-stack": "bin/auth-stack.js",
-    "google-stack": "bin/google-stack.js"
+    "deploy-stack": "bin/deploy-stack.js"
   },
   "scripts": {
     "build": "tsc",
@@ -21,7 +21,10 @@
     "typescript": "~5.6.3"
   },
   "dependencies": {
-    "aws-cdk-lib": "2.190.0",
+    "@aws-cdk/aws-codebuild": "^1.37.0",
+    "@aws-cdk/aws-codepipeline": "^1.121.0",
+    "@aws-cdk/aws-s3": "^1.84.0",
+    "aws-cdk-lib": "^2.190.0",
     "cdk-user-pool-identity-provider-github": "^0.0.9",
     "constructs": "^10.4.2",
     "dotenv": "^16.5.0"
